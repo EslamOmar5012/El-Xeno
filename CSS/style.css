@@ -86,6 +86,7 @@ ul {
   height: 12px;
   background-color: var(--main-color);
   border-radius: 50%;
+  z-index: -1;
 }
 
 .main-title::after {
@@ -98,15 +99,20 @@ ul {
   left: -30px;
 }
 
-.main-title:hover::before {
-  animation-name: mainTitleAnimationBefore;
-  animation-duration: 0.3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
+.main-title:hover {
+  animation: textAnimation 0.3s 1 linear forwards;
+  animation-delay: 0.5s;
 }
 
-@keyframes mainTitleAnimationBefore {
+.main-title:hover::before {
+  animation: beforeAnimation 0.5s 1 linear forwards;
+}
+
+.main-title:hover::after {
+  animation: afterAnimation 0.5s 1 linear forwards;
+}
+
+@keyframes beforeAnimation {
   50% {
     left: 0;
     width: 12px;
@@ -117,6 +123,27 @@ ul {
     border-radius: 0;
     width: 50%;
     height: 100%;
+  }
+}
+
+@keyframes afterAnimation {
+  50% {
+    right: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    right: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+
+@keyframes textAnimation {
+  100% {
+    border-color: transparent;
+    color: white;
   }
 }
 /* Global */
@@ -381,4 +408,64 @@ header .container > ul .list .pop-up ul li a:hover::before {
   padding-top: var(--main-padding-top);
   padding-bottom: var(--main-padding-bottom);
 }
+
+.articles .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.articles .content .box {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 15px;
+  transition: var(--main-transition);
+}
+
+.articles .content .box img {
+  display: block;
+  max-width: 100%;
+}
+
+.articles .content .box .text {
+  padding: 20px;
+}
+
+.articles .content .box .text p {
+  margin-top: 10px;
+  color: #777;
+  line-height: 1.5;
+}
+
+.articles .content .box .read-more {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-top: 1px solid #e6e6e7;
+}
+
+.articles .content .box .read-more svg,
+.articles .content .box .read-more a {
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+.articles .content .box:hover {
+  transform: translateY(-10px);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 15px;
+}
+
+.articles .content .box:hover svg {
+  animation: arrow 0.5s linear infinite;
+}
+
+@keyframes arrow {
+  0% {
+    transform: translate(0px);
+  }
+  100% {
+    transform: translate(10px);
+  }
+}
+
 /*end articles*/
