@@ -557,28 +557,28 @@ header .container > ul .list .pop-up ul li a:hover::before {
   padding-bottom: var(--main-padding-bottom);
 }
 
-.content {
+.features .content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 40px;
 }
 
-.content .box {
+.features .content .box {
   text-align: center;
   border: 1px solid rgb(204, 204, 204);
   transition: var(--main-transition);
   overflow: hidden;
 }
 
-.content .box .image {
+.features .content .box .image {
   position: relative;
 }
 
-.content .box .image img {
+.features .content .box .image img {
   max-width: 100%;
 }
 
-.content .box .image::before {
+.features .content .box .image::before {
   content: "";
   position: absolute;
   top: 0;
@@ -587,19 +587,19 @@ header .container > ul .list .pop-up ul li a:hover::before {
   height: 100%;
 }
 
-.content .one .image::before {
+.features .content .one .image::before {
   background-color: rgba(244, 64, 54, 0.6);
 }
 
-.content .two .image::before {
+.features .content .two .image::before {
   background-color: rgba(0, 150, 136, 0.6);
 }
 
-.content .three .image::before {
+.features .content .three .image::before {
   background-color: rgba(3, 169, 244, 0.6);
 }
 
-.content .box .image::after {
+.features .content .box .image::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -610,7 +610,7 @@ header .container > ul .list .pop-up ul li a:hover::before {
   transition: var(--main-transition);
 }
 
-.content .box h2 {
+.features .content .box h2 {
   font-size: 40px;
   width: fit-content;
   margin: auto;
@@ -618,19 +618,19 @@ header .container > ul .list .pop-up ul li a:hover::before {
   border-radius: 10px;
 }
 
-.content .one h2 {
+.features .content .one h2 {
   border-bottom: 5px solid #f44036;
 }
 
-.content .two h2 {
+.features .content .two h2 {
   border-bottom: 5px solid #009688;
 }
 
-.content .three h2 {
+.features .content .three h2 {
   border-bottom: 5px solid #03a9f4;
 }
 
-.content .box p {
+.features .content .box p {
   color: #777;
   font-size: 20px;
   margin: 30px 0;
@@ -638,7 +638,7 @@ header .container > ul .list .pop-up ul li a:hover::before {
   line-height: 1.9;
 }
 
-.content .box button {
+.features .content .box button {
   position: relative;
   z-index: 1;
   border-radius: 5px;
@@ -650,22 +650,22 @@ header .container > ul .list .pop-up ul li a:hover::before {
   border: none;
 }
 
-.content .one button {
+.features .content .one button {
   border: 3px solid #f44036;
   color: #f44036;
 }
 
-.content .two button {
+.features .content .two button {
   border: 3px solid #009688;
   color: #009688;
 }
 
-.content .three button {
+.features .content .three button {
   border: 3px solid #03a9f4;
   color: #03a9f4;
 }
 
-.content .box button::before {
+.features .content .box button::before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -676,28 +676,100 @@ header .container > ul .list .pop-up ul li a:hover::before {
   transition: var(--main-transition);
 }
 
-.content .one button::before {
+.features .content .one button::before {
   background-color: #f44036;
 }
 
-.content .two button::before {
+.features .content .two button::before {
   background-color: #009688;
 }
 
-.content .three button::before {
+.features .content .three button::before {
   background-color: #03a9f4;
 }
 
-.content .box:hover > div::after {
+.features .content .box:hover > div::after {
   border-width: 170px 500px 170px 0;
 }
 
-.content .box:hover > button {
+.features .content .box:hover > button {
   color: white;
 }
 
-.content .box:hover > button::before {
+.features .content .box:hover > button::before {
   width: 100%;
 }
 
 /* end features */
+
+/* start testimonials */
+.testimonials {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  background-color: var(--section-background);
+}
+
+.testimonials .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.testimonials .content .box {
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.testimonials .content .box h3 {
+  margin-bottom: 10px;
+}
+
+.testimonials .content .box .title {
+  color: #777;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.testimonials .content .box ul li {
+  display: inline-block;
+}
+
+.testimonials .content .box p {
+  margin-top: 10px;
+  line-height: 1.5;
+  color: #777;
+}
+
+.testimonials .content .box::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 10px solid var(--section-background);
+  border-radius: 50%;
+  top: -20%;
+  right: -3%;
+  background-size: contain;
+}
+
+.testimonials .content .one::before {
+  background-image: url("../Images/avatar-01.png");
+}
+.testimonials .content .two::before {
+  background-image: url("../Images/avatar-02.png");
+}
+.testimonials .content .three::before {
+  background-image: url("../Images/avatar-03.png");
+}
+.testimonials .content .four::before {
+  background-image: url("../Images/avatar-04.png");
+}
+.testimonials .content .five::before {
+  background-image: url("../Images/avatar-05.png");
+}
+.testimonials .content .six::before {
+  background-image: url("../Images/avatar-06.png");
+}
+/* end testimonials */
