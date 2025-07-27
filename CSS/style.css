@@ -773,3 +773,93 @@ header .container > ul .list .pop-up ul li a:hover::before {
   background-image: url("../Images/avatar-06.png");
 }
 /* end testimonials */
+
+/*start team-members*/
+.team-members {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+}
+
+.team-members .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.team-members .content .box {
+  position: relative;
+}
+
+.team-members .content .box::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  background-color: var(--section-background);
+  border-radius: 10px;
+}
+
+.team-members .content .box::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  z-index: -1;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: var(--main-transition);
+}
+
+.team-members .content .box .photo {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 50px;
+}
+
+.team-members .content .box .photo img {
+  max-width: calc(100% - 60px);
+  border-radius: 10px;
+  transition: var(--main-transition);
+}
+
+.team-members .content .box .photo ul {
+  margin-right: 10px;
+}
+
+.team-members .content .box .photo ul li {
+  padding-bottom: 20px;
+}
+
+.team-members .content .box .info {
+  padding-left: 24%;
+  margin: 20px 0;
+}
+
+.team-members .content .box .info h3 {
+  color: var(--main-color);
+  font-size: 22px;
+  margin-bottom: 15px;
+  transition: var(--main-transition);
+}
+
+.team-members .content .box:hover > .photo img {
+  filter: grayscale(100%);
+}
+
+.team-members .content .box:hover::after {
+  width: 80%;
+}
+
+.team-members .content .box:hover > .info h3 {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.team-members .content .box .photo ul li:hover {
+  cursor: pointer;
+}
+/*end team-members*/
