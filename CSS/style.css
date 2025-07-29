@@ -940,3 +940,50 @@ header .container > ul .list .pop-up ul li a:hover::before {
   width: 100%;
 }
 /* end services */
+
+/*start our-skills*/
+.our-skills {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+}
+
+.our-skills .container {
+  display: flex;
+}
+
+.our-skills .container > div {
+  flex: 1;
+}
+
+.our-skills .skills .box {
+  margin-bottom: 30px;
+}
+
+.our-skills .skills .box .text {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.our-skills .skills .box .text h3 {
+  align-self: flex-end;
+}
+
+.our-skills .skills .box .text p {
+  color: var(--main-color);
+  border: 1px solid var(--section-background);
+  border-radius: 10px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.our-skills .skills .box .bar {
+  height: 30px;
+}
+
+@media (max-width: 991px) {
+  .our-skills .container img {
+    display: none;
+  }
+}
+/*end our-skills*/
