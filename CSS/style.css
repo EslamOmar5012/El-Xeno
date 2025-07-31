@@ -1065,3 +1065,116 @@ header .container > ul .list .pop-up ul li a:hover::before {
   }
 }
 /*end how-it-works*/
+
+/*start latest-events*/
+.latest-events {
+  padding: var(--main-padding-top) 0;
+}
+
+.latest-events .container {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-areas:
+    "i i i . con con con con con"
+    ". . f f f f f . .";
+}
+
+.latest-events .image {
+  grid-area: i;
+}
+
+.latest-events .image img {
+  max-width: 100%;
+}
+
+.latest-events .content {
+  display: flex;
+  flex-direction: column;
+  grid-area: con;
+}
+
+.latest-events .content .time {
+  margin: 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.latest-events .content .time .box {
+  margin: 10px 5px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #d4d4d4;
+  border-radius: 15px;
+}
+
+.latest-events .content .time .box h3 {
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.latest-events .content .text {
+  text-align: center;
+}
+
+.latest-events .content .text h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.latest-events .content .text p {
+  color: #777;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.latest-events .form {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 70px 0 70px;
+  padding: 30px 40px;
+  grid-area: f;
+  width: 100%;
+  background-color: #f6f5f5;
+  border-radius: 50px;
+}
+
+.latest-events .form input[type="email"] {
+  background-color: white;
+  padding: 20px;
+  flex: 1;
+  border: none;
+  caret-color: var(--main-color);
+  border-radius: 50px;
+}
+
+.latest-events .form input[type="submit"] {
+  border-radius: 30px;
+  border: none;
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+.latest-events .form input[type="submit"]:hover {
+  background-color: #1e7ebf;
+}
+
+@media (max-width: 991px) {
+  .latest-events .container {
+    grid-template-areas:
+      "con con con con con con con con con"
+      "f f f f f f f f f";
+  }
+  .latest-events .image {
+    display: none;
+  }
+}
+/*end latest events*/
